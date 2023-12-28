@@ -1,0 +1,265 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  block-size: 100%;
+}
+
+.page {
+  margin: auto;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%; 
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute; /* элемент вырывают из потока */
+  width: 1px; /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
+  height: 1px;
+  margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
+  border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
+  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
+  overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
+  clip: rect(0 0 0 0); /* это свойство обрезает видимую область до нулевого значения */
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 32px;
+  margin: 133px 0;
+  inline-size: 1140px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.content__list {
+  height: 300px;
+  overflow: scroll;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  box-sizing: 100%;
+  inline-size: 100%;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.result__video-container {
+  position: relative;  
+  min-inline-size: 711px;
+  max-block-size: 386px;
+}
+
+.result__video {
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.content__list::-webkit-scrollbar {
+  inline-size: 0;
+  block-size: 0;
+}
+
+
+.content__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.content__video-card {
+  display: flex;
+  justify-content: space-between;
+  max-inline-size: 399px;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+.content__video-card:active,
+.button:active {
+  background-color: #545050;
+}
+
+.content__video-card-thumbnail {
+  max-inline-size: 194px;
+}
+
+.search-form__fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  border: none;
+  min-inline-size: 224px;
+}
+
+.search-form__fieldset-title {
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.search-form__textfield {
+  border: none;
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+  color: rgba(255, 255, 255, 0.70);
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+  background-color: inherit;
+  inline-size: 100%;
+  cursor: pointer;
+  appearance: none;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 14px;
+}
+
+.title {
+  font-family: Oswald;
+  font-weight: 700;
+  font-size: 75px;
+  font-style: normal;
+  line-height: 94%; /* 70.5px */
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__card-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.content__video-card-title {
+  margin-bottom: 6px;  
+  font-family: Oswald;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%; /* 30px */
+  text-transform: uppercase;
+}
+
+.content__video-card-description {
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 16.2px; /* 90% */
+}
+
+.search-form__label {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  width: fit-content;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__textfield:focus{
+  outline: none;
+}
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__submit-button:focus,
+.button {
+  outline: none;
+}
+
+.search-form__submit-button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.button {
+  align-self: flex-end;
+  border: 1px solid #FFF;
+  padding-top:6px;
+  padding-bottom: 6px;
+  color: #FFF;
+  font-family: Fira Sans Condensed;
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+  text-align: center;
+  background-color: inherit;
+  cursor: pointer;
+  inline-size: 100%;
+}
+
+.search-form__pseudo-checkbox {
+  display: inline-block;
+  border: 1px #fff solid;
+  background-color: inherit;
+  cursor: pointer;
+  inline-size: 19px;
+  block-size: 19px;
+  padding: 1px;
+}
+
+input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  display: flex;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+}
